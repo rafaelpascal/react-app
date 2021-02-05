@@ -5,13 +5,14 @@ import './Checkout.css';
 import Subtotal from './Subtotal';
 
 function Checkout() {
-    const [{ basket }] = useStateValue()
+    const [{ basket, user }, dispatch] = useStateValue()
     return ( 
         <div className="checkout">
         <div className="checkout__left">
             <img className="checkout__ad" src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg" alt=""/>
         {basket?.length ===0 ? (
             <div>
+                <h3>Hello, {user?.email}</h3>
                 <h2>Your Shopping Bassket is Empty</h2>
                 <p>
                     you have no item in your basket. to buy one or add to basket click on "Add to basket" next to the item.
